@@ -27,10 +27,10 @@ public class Numbers {
             Boolean flag = ((b * b + c * c) == (a * a));
             System.out.println(flag);
         } else if (max == b) {
-            Boolean flag = ((b * b + c * c) == (a * a));
+            Boolean flag = ((b * b + a * a) == (b * b));
             System.out.println(flag);
         } else {
-            Boolean flag = ((b * b + c * c) == (a * a));
+            Boolean flag = ((b * b + a * a) == (c* c));
             System.out.println(flag);
 
         }
