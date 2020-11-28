@@ -1,19 +1,99 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-
-
 public class Numbers {
     /*
      * This contains fibinica , gcd,lcm ,prime factors and prime number.
      * */
     public static void main(String[] args) {
 
+//        primeFactorization();
+
+//        countNumberOfDigit();
+//        printNoOfDigit();
+//        reverseNumberOfDigit();
+        pythaghorustriple();
+    }
+
+    private static void pythaghorustriple() {
+        int a = 5;
+        int b = 12;
+        int c = 13;
+        int max = a;
+        if (b >= max) {
+            max = b;
+        }
+        if (c >= max) {
+            max = c;
+        }
+        if (max == a) {
+            Boolean flag = ((b * b + c * c) == (a * a));
+            System.out.println(flag);
+        } else if (max == b) {
+            Boolean flag = ((b * b + c * c) == (a * a));
+            System.out.println(flag);
+        } else {
+            Boolean flag = ((b * b + c * c) == (a * a));
+            System.out.println(flag);
+
+        }
+    }
+
+    private static void reverseNumberOfDigit() {
+        int n =438;
+        while (n!=0){
+            int r  = n%10;
+            System.out.print(r);
+            n =n/10;
+
+        }
+    }
+
+    private static void countNumberOfDigit() {
+        int  n = 8976 ;
+        int dig= 0 ;
+        while(n != 0){
+            dig++;
+            n = n/ 10;
+
+        }
+        System.out.println(dig);
+    }
+
+
+    private static void printNoOfDigit() {
+        int  n = 8976 ;
+        int temp =n;
+        int dig= 0 ;
+        while(temp != 0){
+            dig++;
+            temp = temp/ 10;
+
+        }
+int digit = (int) Math.pow(10,dig-1);
+
+        while (n!=0){
+int q  = n/digit;
+            System.out.println(q);
+            n  = n%digit;
+
+
+            digit  = digit/10;
+        }
+
 
 
     }
 
 
+
+    public  static  void  primeFactorization(){
+
+        int  n = 24;
+        for(int i = 2 ; i <= n ;i++){
+            while(n%i == 0){
+
+                System.out.println(i);
+                n = n / i ;
+            }}
+    }
 
 
 
