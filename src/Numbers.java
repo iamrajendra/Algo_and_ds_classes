@@ -9,7 +9,85 @@ public class Numbers {
 //        countNumberOfDigit();
 //        printNoOfDigit();
 //        reverseNumberOfDigit();
-        pythaghorustriple();
+//        pythaghorustriple();
+//        decimalToBinary();
+//        binaryToDecimal();
+//        decimalToOctal();
+
+
+    }
+
+    
+
+    private static void decimalToOctal() {
+
+        int n = 542;
+        int temp = n;
+        int octal = 0;
+        int power = 0;
+
+
+        while (temp != 0) {
+            int r = temp % 8;
+            octal = (int) (octal + r * Math.pow(10, power));
+
+
+            temp = temp / 8;
+            power++;
+
+
+        }
+
+        System.out.println(octal);
+
+
+    }
+
+
+    private static void binaryToDecimal() {
+        int n = 111001;
+        int temp = n;
+        int decimal = 0;
+        int power = 0;
+
+
+        while (temp != 0) {
+            int r = temp % 10;
+            decimal = (int) (decimal + r * Math.pow(2, power));
+
+
+            temp = temp / 10;
+            power++;
+
+
+        }
+
+        System.out.println(decimal);
+
+
+    }
+
+    private static void decimalToBinary() {
+        int n = 57;
+        int temp = n;
+        int binary = 0;
+        int power = 0;
+
+
+        while (temp != 0) {
+            int r = temp % 2;
+            binary = (int) (binary + r * Math.pow(10, power));
+
+
+            temp = temp / 2;
+            power++;
+
+
+        }
+
+        System.out.println(binary);
+
+
     }
 
     private static void pythaghorustriple() {
@@ -30,28 +108,28 @@ public class Numbers {
             Boolean flag = ((b * b + a * a) == (b * b));
             System.out.println(flag);
         } else {
-            Boolean flag = ((b * b + a * a) == (c* c));
+            Boolean flag = ((b * b + a * a) == (c * c));
             System.out.println(flag);
 
         }
     }
 
     private static void reverseNumberOfDigit() {
-        int n =438;
-        while (n!=0){
-            int r  = n%10;
+        int n = 438;
+        while (n != 0) {
+            int r = n % 10;
             System.out.print(r);
-            n =n/10;
+            n = n / 10;
 
         }
     }
 
     private static void countNumberOfDigit() {
-        int  n = 8976 ;
-        int dig= 0 ;
-        while(n != 0){
+        int n = 8976;
+        int dig = 0;
+        while (n != 0) {
             dig++;
-            n = n/ 10;
+            n = n / 10;
 
         }
         System.out.println(dig);
@@ -59,44 +137,40 @@ public class Numbers {
 
 
     private static void printNoOfDigit() {
-        int  n = 8976 ;
-        int temp =n;
-        int dig= 0 ;
-        while(temp != 0){
+        int n = 8976;
+        int temp = n;
+        int dig = 0;
+        while (temp != 0) {
             dig++;
-            temp = temp/ 10;
+            temp = temp / 10;
 
         }
-int digit = (int) Math.pow(10,dig-1);
+        int digit = (int) Math.pow(10, dig - 1);
 
-        while (n!=0){
-int q  = n/digit;
+        while (n != 0) {
+            int q = n / digit;
             System.out.println(q);
-            n  = n%digit;
+            n = n % digit;
 
 
-            digit  = digit/10;
+            digit = digit / 10;
         }
-
 
 
     }
 
 
+    public static void primeFactorization() {
 
-    public  static  void  primeFactorization(){
-
-        int  n = 24;
-        for(int i = 2 ; i <= n ;i++){
-            while(n%i == 0){
+        int n = 24;
+        for (int i = 2; i <= n; i++) {
+            while (n % i == 0) {
 
                 System.out.println(i);
-                n = n / i ;
-            }}
+                n = n / i;
+            }
+        }
     }
-
-
-
 
 
     private static void fibonica() {
