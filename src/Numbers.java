@@ -14,10 +14,41 @@ public class Numbers {
 //        binaryToDecimal();
 //        decimalToOctal();
 
+//inverseNumber();
+rotateNumber();
+    }
+
+    private static void rotateNumber() {
+        int num =562984;
+        int by =2;
+        int temp=num;
+        int base =0;
+        int digit =0;
+        int remainder =0;
+        int divideBy  = (int) Math.pow(10,by);
+        while(temp!=0){
+
+            temp  = temp/10;
+            digit++;
+        }
+        base  = (int) Math.pow(10,digit-2);
+
+        remainder  = num%divideBy;
+       int  number =num/divideBy;
+        remainder =remainder * base+number;
+
+
+        System.out.println(String.format("Rotate number %d ",remainder));
+
 
     }
 
-    
+    private static void inverseNumber() {
+
+    }
+
+
+
 
     private static void decimalToOctal() {
 
