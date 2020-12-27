@@ -1,5 +1,7 @@
 import javax.naming.SizeLimitExceededException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Array {
     public static void main(String[] args) throws InterruptedException {
@@ -9,10 +11,54 @@ public class Array {
 //barOfArray();
 
         //sumOfTwoArray();
-        diffOfTwoArray();
+//        diffOfTwoArray();
+        reverseTheNumber();
+    }
+
+    private static void reverseTheNumber() {
+        int [] num =  new int[]{1,2,3,4,5};
+        int i  = num.length-1;
+        int[] res =  new int[i];
+        int j =0;
+        while(true){
+            res[j] = num[i];
+            if (i!=0)
+                break;
+        j++;
+        i--;
+        }
+        System.out.println(Arrays.toString(res));
     }
 
     private static void diffOfTwoArray() {
+        Integer [] a  =  new Integer[]{3,3,3,3,3};
+        Integer [] b  =  new Integer[]{9,9,9,9};
+
+        if (a.length>b.length){
+            ArrayList<Integer> temp= new ArrayList<Integer>(Arrays.asList(b));
+            temp.add(0,0);
+            b  = temp.toArray(new Integer[0]);
+
+        }
+
+        int [] res =  new int[a.length];
+        int i = a.length-1;
+        int j= a.length-2;
+        while(i!=0 ){
+
+            if(a[i]>b[i]){
+
+                res[i] = a[i]- b[i];
+            }else {
+               a[j]= a[j]-1;
+                res[i] = 10+a[i] -b[i];
+            }
+
+            i--;
+            j--;
+        }
+        System.out.println(Arrays.toString(res));
+
 
     }
 
