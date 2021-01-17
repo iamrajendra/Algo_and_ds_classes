@@ -4,31 +4,86 @@ public class TwoDArray {
     public static void main(String[] args) {
 //        howtoInputInMatrix();
 
-//        multiplicationMatrix();
+        // multiplicationMatrix();
 
 //        spiralMatrix();
-//        rotationMatrix();
-        waveTraverseMatrix();
+//rotationMatrix();
+//        waveTraverseMatrix();
+//        diagonalTraversalMatrix();
+        endPoint();
+    }
+
+    private static void endPoint() {
+        int[][] path = new int[][]{{0, 0, 1, 0}, {1, 0, 0, 0}, {0, 0, 0, 0}, {1, 0, 1, 0}};
+        int i = 0;
+        int j = 0;
+        int direction = 0;
+        while (true) {
+            direction  = (direction+path[i][j]) %4;
+
+            if (direction == 0) { // east
+                j++;
+
+            } else if (direction == 1) {//south
+                i++;
+
+            } else if (direction == 2) { // west
+                j--;
+
+            } else if (direction == 3) {// north
+                i--;
+            }
+            if(i<0){
+                i++;
+                break;
+            }else  if (j<0){
+                j++;
+                break;
+
+            }else if (i==4){
+                i--;
+                break;
+
+            }else if (j==4){
+                j--;
+                break;
+            }
+        }
+        System.out.println(String.format("i=%d, j=%d",i,j));
+
+
+    }
+
+
+    private static void diagonalTraversalMatrix() {
+        int[][] mat = new int[][]{{11, 12, 13}, {21, 22, 23}, {31, 32, 33}};
+        for (int g = 0; g < mat.length; g++) {
+            for (int i = 0, j = g; j < mat.length; i++, j++) {
+                System.out.print(mat[i][j] + " ");
+            }
+        }
+
+
     }
 
     private static void waveTraverseMatrix() {
-        int [][] wave = new int[][]{{11,12,13,14},
-                {21,22,23,24},
-                {31,32,33,34},
+        int[][] wave = new int[][]{{11, 12, 13, 14},
+                {21, 22, 23, 24},
+                {31, 32, 33, 34},
         };
         int rowMax = wave.length;
-        int colMax  = wave[0].length;
+        int colMax = wave[0].length;
         for (int j = 0; j < colMax; j++) {
 
-            if (j%2==0){
+            if (j % 2 == 0) {
                 for (int i = 0; i < rowMax; i++) {
-                   int val = wave[i][j];
-                    System.out.print(val+" ");
-                }
-            }else {
-                for (int i = rowMax-1; i >=0; i--) {
                     int val = wave[i][j];
-                    System.out.print(val+" ");
+                    System.out.print(val + " ");
+                }
+            } else {
+                for (int i = rowMax - 1; i >= 0; i--) {
+                    int val = wave[i][j];
+                    System.out.print(val + " ");
                 }
             }
             //System.out.println();
@@ -39,10 +94,13 @@ public class TwoDArray {
     }
 
     private static void rotationMatrix() {
-        char[][] rotate = new char[][]{{'A', 'B', 'C', 'D'}, {'E', 'F', 'G', 'H'}, {'I', 'J', 'K', 'L'},{'M','N','O','P'}};
+        char[][] rotate = new char[][]{{'A', 'B', 'C', 'D'},
+                {'E', 'F', 'G', 'H'},
+                {'I', 'J', 'K', 'L'},
+                {'M', 'N', 'O', 'P'}};
 //        transpose
         for (int i = 0; i < rotate.length; i++) {
-            for (int j = i; j < rotate[0].length-1; j++) {
+            for (int j = i; j < rotate[0].length; j++) {
                 char temp = rotate[i][j];
                 rotate[i][j] = rotate[j][i];
                 rotate[j][i] = temp;
@@ -51,12 +109,12 @@ public class TwoDArray {
 
 //        reverse
         for (int i = 0; i < rotate.length; i++) {
-            int left =0;
-            int right = rotate[i].length-1;
-            while (left<right){
-                char temp  = rotate[i][left];
+            int left = 0;
+            int right = rotate[i].length - 1;
+            while (left < right) {
+                char temp = rotate[i][left];
                 rotate[i][left] = rotate[i][right];
-                rotate[i][right]  =temp;
+                rotate[i][right] = temp;
                 left++;
                 right--;
             }
@@ -64,7 +122,7 @@ public class TwoDArray {
         }
         for (int i = 0; i < rotate.length; i++) {
             for (int j = 0; j < rotate[0].length; j++) {
-                System.out.print(rotate[i][j]+" ");
+                System.out.print(rotate[i][j] + " ");
 
             }
             System.out.println();
@@ -73,7 +131,9 @@ public class TwoDArray {
     }
 
     private static void spiralMatrix() {
-        int[][] spiral = new int[][]{{11, 12, 13, 14}, {21, 22, 23, 24}, {31, 32, 33, 34}};
+        int[][] spiral = new int[][]{{11, 12, 13, 14},
+                {21, 22, 23, 24},
+                {31, 32, 33, 34}};
         int colMax = spiral[0].length - 1;
         int rowMax = spiral.length - 1;
         int colMin = 0;
@@ -118,49 +178,17 @@ public class TwoDArray {
 
 
     private static void multiplicationMatrix() {
-/*
-        i/p = mat1 = 3 3
-        1 1 1
-        2 2 2
-        3 3 3
 
-        Mat2 = 3 3
-        1 1 1
-        2 2 2
-        3 3 3
-*/
-        Scanner scanner = new Scanner(System.in);
-        int mat1Row = scanner.nextInt();
-        int mat1Col = scanner.nextInt();
-        System.out.println("Row Mat 1 Row " + mat1Row);
-        System.out.println("Row Mat 1 Col " + mat1Col);
-
-        int[][] mat1 = new int[mat1Row][mat1Col];
-//        first mat input
-        for (int i = 0; i < mat1.length; i++) {
-
-            for (int j = 0; j < mat1[0].length; j++) {
-                System.out.print(String.format("int at %d and %d ", i, j));
-                mat1[i][j] = scanner.nextInt();
-            }
-        }
-        System.out.println("first Mat is completed");
-        int mat2Row = scanner.nextInt();
-        int mat2Col = scanner.nextInt();
-        System.out.println("Row Mat 2 Row " + mat2Row);
-        System.out.println("Row Mat 2 Col " + mat2Col);
-
-        int[][] mat2 = new int[mat2Row][mat2Col];
-//        second mat input
-        for (int i = 0; i < mat2.length; i++) {
-
-            for (int j = 0; j < mat2[0].length; j++) {
-                System.out.print(String.format("int at %d and %d ", i, j));
-
-                mat2[i][j] = scanner.nextInt();
-            }
-        }
-        System.out.println("second Mat is completed");
+        int[][] mat1 = new int[][]{{1, 1, 1},
+                {2, 2, 2},
+                {3, 3, 3}};
+        int[][] mat2 = new int[][]{{1, 1, 1},
+                {2, 2, 2},
+                {3, 3, 3}};
+        int mat1Col = mat1[0].length;
+        int mat2Row = mat2.length;
+        int mat1Row = mat1.length;
+        int mat2Col = mat2.length;
 
 // multiplication
         if (mat1Col != mat2Row) {
@@ -171,7 +199,9 @@ public class TwoDArray {
         for (int i = 0; i < output.length; i++) {
             for (int j = 0; j < output[i].length; j++) {
                 for (int k = 0; k < mat1Row; k++) {
-                    output[i][j] = output[i][j] + mat1[i][k] * mat2[k][j];
+                    // System.out.println(String.format("Value of i =%d  value of j=%d and value of k=%d",i,j,k));
+                    // System.out.println(String.format("%d * %d ",mat1[i][k],mat1[i][j]));
+                    output[i][j] += mat1[i][k] * mat2[k][i];
 
                 }
             }
@@ -181,15 +211,16 @@ public class TwoDArray {
         for (int i = 0; i < output.length; i++) {
             for (int j = 0; j < output[i].length; j++) {
 
-                System.out.println(output[i][j] + " ");
+                System.out.print(output[i][j] + " ");
             }
             System.out.println();
         }
 
     }
-/*
-how to take input from the scanner
- */
+
+    /*
+    how to take input from the scanner
+     */
     private static void howtoInputInMatrix() {
         Scanner s = new Scanner(System.in);
         int row = s.nextInt();
