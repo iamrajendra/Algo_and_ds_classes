@@ -10,7 +10,49 @@ public class TwoDArray {
 //rotationMatrix();
 //        waveTraverseMatrix();
 //        diagonalTraversalMatrix();
-        endPoint();
+//        endPoint();
+//        shaddlePoint();
+    }
+
+    private static void shaddlePoint() {
+        int[][] mat = new int[][]
+                {
+                        {21, 22, 44, 24},
+                        {33, 12, 13, 14},
+                        {31, 32, 23, 34},
+                        {41, 42, 11, 44},
+
+                };
+// smallest element in array
+        int min = mat[0][0];
+        int mini = 0, minj = 0;
+        for (int i = 0; i < mat.length; i++) {
+
+            for (int j = 0; j < mat[0].length; j++) {
+                if (min > mat[i][j]) {
+                    min = mat[i][j];
+                    mini = i;
+                    minj = j;
+                }
+            }
+        }
+        System.out.println(String.format("The min element is %d and position is %d,%d", min, mini, minj));
+
+// Now find the largest element in the  column
+        int fixedC0l = mini;
+        int maxj = 0;
+        int max = mat[fixedC0l][0];
+        for (int i = 0; i < mat.length; i++) {
+
+            if (max < mat[i][fixedC0l]) {
+                max = mat[i][fixedC0l];
+                maxj = i;
+            }
+
+        }
+
+        System.out.println(String.format("The max element is %d and position is %d,%d", max, fixedC0l, maxj));
+
     }
 
     private static void endPoint() {
@@ -19,7 +61,7 @@ public class TwoDArray {
         int j = 0;
         int direction = 0;
         while (true) {
-            direction  = (direction+path[i][j]) %4;
+            direction = (direction + path[i][j]) % 4;
 
             if (direction == 0) { // east
                 j++;
@@ -33,23 +75,23 @@ public class TwoDArray {
             } else if (direction == 3) {// north
                 i--;
             }
-            if(i<0){
+            if (i < 0) {
                 i++;
                 break;
-            }else  if (j<0){
+            } else if (j < 0) {
                 j++;
                 break;
 
-            }else if (i==4){
+            } else if (i == 4) {
                 i--;
                 break;
 
-            }else if (j==4){
+            } else if (j == 4) {
                 j--;
                 break;
             }
         }
-        System.out.println(String.format("i=%d, j=%d",i,j));
+        System.out.println(String.format("i=%d, j=%d", i, j));
 
 
     }
