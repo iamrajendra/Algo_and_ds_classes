@@ -109,8 +109,7 @@ public class TwoDArray {
     }
 
     private static void waveTraverseMatrix() {
-        int[][] wave = new int[][]{
-                {11, 12, 13, 14},
+        int[][] wave = new int[][]{{11, 12, 13, 14},
                 {21, 22, 23, 24},
                 {31, 32, 33, 34},
         };
@@ -137,8 +136,7 @@ public class TwoDArray {
     }
 
     private static void rotationMatrix() {
-        char[][] rotate = new char[][]{
-                {'A', 'B', 'C', 'D'},
+        char[][] rotate = new char[][]{{'A', 'B', 'C', 'D'},
                 {'E', 'F', 'G', 'H'},
                 {'I', 'J', 'K', 'L'},
                 {'M', 'N', 'O', 'P'}};
@@ -175,8 +173,7 @@ public class TwoDArray {
     }
 
     private static void spiralMatrix() {
-        int[][] spiral = new int[][]{
-                {11, 12, 13, 14},
+        int[][] spiral = new int[][]{{11, 12, 13, 14},
                 {21, 22, 23, 24},
                 {31, 32, 33, 34}};
         int colMax = spiral[0].length - 1;
