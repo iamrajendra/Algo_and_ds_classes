@@ -5,9 +5,9 @@ public class Search {
         linearSearch();
 
 //        binarySearchExample();
-//bubbleSort();
+bubbleSort();
 
-//        selectionSort();
+        selectionSort();
 
 //    insertionSort();
     }
@@ -35,12 +35,12 @@ public class Search {
     private static void selectionSort() {
         int arr[] = new int[]{64, 25, 12 ,22 ,11};
         for (int i = 0; i < arr.length-1; i++) {
-//int min  = i;
+int target  = i;
             for (int j = i+1; j <arr.length ; j++) {
 
-                if (arr[i]> arr[j]){
-                    int temp  = arr[i];
-                    arr[i]  = arr[j];
+                if (arr[target]> arr[j]){
+                    int temp  = arr[target];
+                    arr[target]  = arr[j];
                     arr[j]  =temp;
 
                 }
