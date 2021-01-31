@@ -200,7 +200,7 @@ public class LinkedListEx {
         return s.data;
     }
 
-    private void mergeLinkList(LinkL l1,LinkL l2 ){
+    /*private void mergeLinkList(LinkL l1,LinkL l2 ){
         Node node1 = l1.head;
         Node node2  = l2.head;
         LinkedList result  = new LinkedList();
@@ -225,5 +225,5 @@ public class LinkedListEx {
 
 
 
-    }
+    }*/
 }
